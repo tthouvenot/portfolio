@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./public/sass/main.scss:./public/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tthouvenot/portfolio_v3.git"
+  },
+  "keywords": [
+    "portfolio",
+    "thouvenot"
+  ],
+  "author": "Tristan Thouvenot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tthouvenot/portfolio_v3/issues"
+  },
+  "homepage": "https://github.com/tthouvenot/portfolio_v3#readme"
+}
