@@ -1,0 +1,43 @@
+// Variables
+$font-color: #323232;
+$main-color: #087E8B;
+$secondary-color:#CD8B76;
+$background-color: #FFFDF2;
+
+$main-font: 'Satoshi';
+$title-font: 'SUSE';
+$tagline-font:'Playwrite PE'; 
+
+// Reset CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    color: $font-color;
+    text-decoration: none;
+} // TODO: Make animation
+
+// General styles
+body {
+    background-color: $background-color;
+    font-family: $main-font, sans-serif;
+}
+
+// Header
+header {
+    background-color: $main-color;//TODO: Make gradient main to background
+    padding: 20px;
+    color: $background-color; //TODO: Make function
+    text-align: center;
+
+    & a{
+        color: $background-color;
+    }
+}
