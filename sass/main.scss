@@ -17,6 +17,9 @@ $section-title: $main-color solid 0.625rem;
 
 // TEMP
 $border: solid 1px $test-color; //TODO: remove before deployment
+.hidden {
+    display: none;
+}
 
 // Reset CSS
 * {
@@ -35,6 +38,8 @@ a{
 
 // General styles
 body {
+    max-width: 120rem;
+    margin: auto;
     background-color: $background-color;
     font-family: $main-font, sans-serif;
     line-height: 1.5rem;
@@ -70,7 +75,7 @@ main{
     }
 
     &__menu{
-        width: 10%;
+        width: 50%;
         height: 100%;
 
         & ul{
@@ -95,12 +100,13 @@ main{
 
             &:hover {
                 transform: scale(1.3);
+                border-bottom: $background-color .125rem solid;
             }
         }
     }
 
     &__social{
-        width: 10%;
+        width: 18%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -300,7 +306,6 @@ main{
     
     &__card{
         height: 21.875rem;
-        border: $border;
         overflow: hidden;
 
         position: relative; // S'assurer que le parent contrôle le positionnement de l'enfant
@@ -360,7 +365,7 @@ main{
         font-weight: bold;
         letter-spacing: 0.025rem;
         text-transform: uppercase;
-        background-color: $tertiary-color;
+        background-color: $main-color;
         color: $background-color;
         border: none;
         border-radius: .625rem;
@@ -410,4 +415,206 @@ main{
         background-size: cover;
         background-position: center center;
     }
+}
+
+.skills{
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    
+    border: $border;
+
+    &__title{
+        width: fit-content;
+        font-family: $title-font;
+        font-size: 3rem;
+        border-bottom: $main-color solid 0.625rem;
+        align-self: end;
+    }
+
+    /******************
+    *** Hard Skills ***
+    *******************/
+
+    &__hard{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        gap: 2rem;
+    }
+
+    &__language{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-flow: row wrap;
+        gap: 16px;
+    }
+
+    &__software{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap:15%;
+    }
+
+    &__concept{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15%;
+    }
+
+    &__card{
+        max-width: 8rem;
+        max-height: 8rem;
+        
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    
+    /************************
+    *** Loading Animation ***
+    *************************/
+
+    &__loading{
+        position:relative;
+        height: 128px;
+        width: 128px;
+    }
+
+    @keyframes rotating{
+        from{
+            rotate: (0deg);
+        }
+        
+        to{
+            rotate: (360deg);
+        }
+    }
+    
+    @keyframes scrolling-text {
+        0% {
+            transform: translateX(100%);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+    
+    &__loader-main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 40%;
+        width: 40%;
+        margin-top: -20%;
+        margin-left: -20%;
+        border-top: solid 3px $main-color;
+        border-left: solid 3px $main-color;
+        border-radius: 50%;
+        animation: rotating 1.5s linear infinite;
+    }
+
+    &__loader-1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 50%;
+        width: 50%;
+        margin-top: -25%;
+        margin-left: -25%;
+        border-right: solid 2px $test-color;
+        border-bottom: solid 2px $test-color;
+        border-radius: 50%;
+        animation: rotating 2s reverse infinite;
+    }
+
+    &__loader-2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 60%;
+        width: 60%;
+        margin-top: -30%;
+        margin-left: -30%;
+        border-top: solid 3px $tertiary-color;
+        border-right: solid 3px $tertiary-color;
+        border-radius: 50%;
+        animation: rotating 2.1s linear infinite;
+    }
+
+    &__loader-3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 70%;
+        width: 70%;
+        margin-top: -35%;
+        margin-left: -35%;
+        border-bottom: solid 3px $main-color;
+        border-right: solid 3px $main-color;
+        border-radius: 50%;
+        animation: rotating 1.8s reverse infinite;
+    }
+
+    &__loader-text {
+        position: absolute;
+        top: calc(100% - 0.5em);
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        margin-top: -50%;
+        margin-left: -50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        & p {
+            position: relative;
+            white-space: nowrap;
+            color: $font-color;
+            font-weight: bold;
+            animation: scrolling-text 10s linear infinite;
+            z-index: 1;
+        }
+    }
+
+
+
+
+    /******************
+    *** Soft Skills ***
+    *******************/
+    
+    &__soft{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    &__container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
 }

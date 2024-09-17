@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a1751d2ab0.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Tristan Thouvenot - Portfolio</title>
 </head>
 <body>
     <header class="header-container">
@@ -20,7 +20,19 @@
         <nav class="header-container__menu">
             <ul>
                 <li>
-                    <a href="https://google.fr">À propos</a>
+                    <a href="#about">À propos</a>
+                </li>
+                <li>
+                    <a href="#goal">Objectifs</a>
+                </li>
+                <li>
+                    <a href="#achievement">Réalisations</a>
+                </li>
+                <li>
+                    <a href="#skills">Compétences</a>
+                </li>
+                <li>
+                    <a href="#experience">Carrière</a>
                 </li>
                 <li>
                     <a href="https://google.fr">Contact</a>
@@ -31,10 +43,11 @@
             <a href="https://www.instagram.com/thouvenot.tristan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/tthouvenot/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://www.threads.net/@thouvenot.tristan" target="_blank"><i class="fa-brands fa-threads"></i></a>
+            <a href="https://github.com/tthouvenot" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
     </header>
     <main>
-        <section class="about">
+        <section id="about" class="about">
             <div class="about__photo">
                 <img src="./public/img/placeholder_portrait.png" alt="placeholder_portrait">
             </div>
@@ -53,7 +66,7 @@
                 </div>
             </div>
         </section>
-        <section class="goal">
+        <section id="goal" class="goal">
             <div class="goal__title"></div>
                 <h1 class="goal__title--content">De la Passion au Professionnalisme</h1>
             </div>
@@ -119,7 +132,7 @@
                 </div>
             </div>
         </section>
-        <section class="achievement"> <!-- TODO: Make a carousel -->
+        <section id="achievement" class="achievement">
             <h2 class="achievement__section">Mes réalistations</h2>
             <div class="achievement__dev">
                 <div class="achievement__card achievement__fisheye">
@@ -186,26 +199,226 @@
                 </div>
             </div>
         </section>
-        <section class="skills">
+        <section id="skills" class="skills">
+            <h2 class="skills__title">Mes Compétences</h2>
             <div class="skills__hard">
+                <h3>Techniques</h3>
                 <div class="skills__language">
-    
+                    <!-- TODO: Make loading animation for learning skills -->
+                    <div class="skills__card "><!-- TODO: erase  class -->
+                        <img src="./public/img/html-5.png" alt="icone HTML5">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/css-3.png" alt="icone CSS3">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/sass.png" alt="icone sass">
+                    </div>
+                    <div class="skills__card skills__loading">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div  class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                Bootstrap...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                Javascript...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                C#...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                Java...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                SQL...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                Markdown...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        <div class="skills__loader-2">
+                        </div>
+                        <div class="skills__loader-1">
+                        </div>
+                        <div class="skills__loader-main"></div>
+                        <div class="skills__loader-text">
+                            <p>
+                                Git...En cours d'apprentissage
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="skills__software">
-    
+                    <div class="skills__card ">
+                        <img src="./public/img/vscode.png" alt="icone vs code">
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        Visual Studio
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/linux.jpg" alt="icone linux">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/windows.jpg" alt="icone windows">
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        Docker
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/gpi-logo.jpg" alt="icone glpi">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/nagios-logo.png" alt="icone nagios">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/pfsense-logo_2.jpeg" alt="icone pfsense">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/notion.png" alt="icone notion">
+                    </div>
+                    <div class="skills__card  skills__loading ">
+                        <img src="./public/img/obsidian.png" alt="icone obsidian">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/figma.jpg" alt="icone figma">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/office.jpg" alt="icone office">
+                    </div>
+                    <div class="skills__card ">
+                        <img src="./public/img/github.png" alt="icone github">
+                    </div>
                 </div>
                 <div class="skills__concept">
-    
-                </div>
-                <div class="skills__misc">
-    
+                    <div class="skills__card">
+                        Gestion de projet
+                            Agile
+                            Kanban
+                            Gantt
+                    </div>
+                    <div class="skills__card">
+                        ITIL
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        UX/UI design
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        Clean Code
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        Design Pattern
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        RGPD
+                    </div>
+                    <div class="skills__card">
+                        Sécurité informatique
+                    </div>
+                    <div class="skills__card skills__loading ">
+                        Architecture des données
+                    </div>
                 </div>
             </div>
             <div class="skills__soft">
-
+                <h3>Transversales</h3>
+                <div class="skills__container">
+                    <div>
+                        Curiosité
+                    </div>
+                    <div>
+                        Adaptabilité
+                    </div>
+                    <div>
+                        Travail d'équipe
+                    </div>
+                    <div>
+                        Capacité d'apprentissage
+                    </div>
+                    <div>
+                        Empathie
+                    </div>
+                    <div>
+                        Gestion du stress
+                    </div>
+                    <div>
+                        Résolution des problèmes
+                    </div>
+                    <div>
+                        Autonomie
+                    </div>
+                    <div>
+                        Esprit d'initiative
+                    </div>
+                    <div>
+                        Esprit critique
+                    </div>
+                    <div>
+                        Créativité
+                    </div>
+                    <div>
+                        Persévérence
+                    </div>
+                    <div>
+                        Capacité de synthèse
+                    </div>
+                    <div>
+                        Pédagogie
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="eperience">
+        <section id="experience" class="experience">
             <!-- TODO: Make Timeline -->
         </section>
     </main>
