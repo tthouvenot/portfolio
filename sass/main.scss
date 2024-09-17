@@ -5,7 +5,7 @@ $secondary-color:#CD8B76;
 $tertiary-color:#222E50;
 $test-color: #AA1155;
 $error-color: #e3170a;
-$background-color: #D7D9CE;
+$background-color: #edf4f5;
 
 $main-font: 'Satoshi';
 $title-font: 'SUSE';
@@ -424,8 +424,6 @@ main{
     justify-content: flex-start;
     gap: 2rem;
     
-    border: $border;
-
     &__title{
         width: fit-content;
         font-family: $title-font;
@@ -443,8 +441,13 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-
         gap: 2rem;
+
+        & h3{
+            width: fit-content;
+            font-family: $title-font;
+            border-bottom: $main-color solid 0.25rem;
+        }
     }
 
     &__language{
@@ -461,19 +464,25 @@ main{
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap:15%;
+        flex-flow: row wrap;
+        gap:16px;
     }
 
     &__concept{
+        width: 100%;
+        height: fit-content;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 15%;
+        flex-flow: row wrap;
+        gap: 16px;
     }
 
     &__card{
-        max-width: 8rem;
-        max-height: 8rem;
+        position: relative;
+        max-width: 6rem;
+        max-height: 6rem;
+        border-radius: 50%;
         
         & img{
             width: 100%;
@@ -481,6 +490,34 @@ main{
             object-fit: cover;
             border-radius: 50%;
         }
+
+        &:not(.skills__loading):hover{
+            .skills__text{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0, 0, 0, 0.6);; // Pour rendre le texte plus lisible
+            }
+        }
+    }
+    
+    &__text{
+        display: none;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        color: white;
+    }
+
+    &__wrap{
+        height: 0rem;
+        width: 50%;
+        margin: auto;
+        border: #323232 solid 1px;
     }
     
     /************************
@@ -592,13 +629,10 @@ main{
             white-space: nowrap;
             color: $font-color;
             font-weight: bold;
-            animation: scrolling-text 10s linear infinite;
+            animation: scrolling-text 8s linear infinite;
             z-index: 1;
         }
     }
-
-
-
 
     /******************
     *** Soft Skills ***
@@ -608,13 +642,27 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        
+        & h3 {
+            padding-top: 2rem;
+            width: fit-content;
+            font-family: $title-font;
+            border-bottom: $main-color solid 0.25rem;
+
+        }
     }
     
     &__container{
+        margin-top: 2rem;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
+        flex-flow: row wrap;
+        gap: 4rem;
     }
 
+    &__list li{
+        list-style-type: circle;
+    }
 
 }
