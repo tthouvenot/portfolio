@@ -666,3 +666,159 @@ main{
     }
 
 }
+
+.experience{
+
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+// TIMELINE  © George Martsoukos - https://georgemartsoukos.com 
+// Found at https://codepen.io/tutsplus/pen/zYQqPYG
+
+.timeline {
+    padding: 50px 20px;
+    margin: 0 auto;
+    margin-top: 8rem;
+    max-width: 1000px;
+    color: var(--dark-blue);
+
+    & ol {
+        position: relative;
+        list-style: none;
+    }
+    
+    & ol::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: $main-color;
+    }
+    
+    & ol li .item-inner {
+        padding: 20px 180px;
+        margin-bottom: 8vh;
+    }
+    
+    & ol li .time-wrapper {
+        position: relative;
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 0.9;
+    }
+    
+    & ol li .time-wrapper::before,
+    & ol li .time-wrapper::after {
+        content: "";
+        position: absolute;
+        background: $main-color;
+    }
+    
+    & ol li .time-wrapper::before {
+        top: 50%;
+        left: -180px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 3px;
+        transition: width 0.8s linear;
+    }
+    
+    & ol li .time-wrapper::after {
+        top: calc(50% - 8px);
+        left: -60px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transform: scale(0);
+        transform-origin: left center;
+        transition: all 0.4s linear;
+    }
+    
+    & ol li time,
+    & ol li .details>* {
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    & ol li time {
+        display: inline-block;
+        transform: translateY(-30px);
+    }
+    
+    & ol li .details>* {
+        transform: translateY(30px);
+    }
+    
+    & ol li .details h3 {
+        font-size: 2rem;
+        line-height: 1;
+        margin: 15px 0;
+    }
+    
+    /* ANIMATION STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+    
+    & ol li.in-view .time-wrapper::before {
+        width: 120px;
+    }
+    
+    & ol li.in-view .time-wrapper::after {
+        transition-delay: 0.8s;
+        transform: scale(1.5);
+    }
+    
+    & ol li.in-view time,
+    & ol li.in-view .details>* {
+        opacity: 1;
+        transform: none;
+    }
+    
+    & ol li.in-view time {
+        transition-delay: 1.3s;
+    }
+    
+    & ol li.in-view .details h3 {
+        transition-delay: 1.5s;
+    }
+    
+    & ol li.in-view .details p {
+        transition-delay: 1.7s;
+    }
+    
+    /* MQ STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+    @media (max-width: 700px) {
+        & ol li .item-inner {
+            padding: 20px 40px;
+        }
+    
+        & ol li .time-wrapper::before {
+            display: none;
+        }
+    
+        & ol li .time-wrapper::after {
+            left: -45px;
+            transform-origin: center;
+        }
+    
+        & ol li.in-view .time-wrapper::after {
+            transition-delay: 0s;
+        }
+    
+        & ol li.in-view time {
+            transition-delay: 0.5s;
+        }
+    
+        & ol li.in-view .details h3 {
+            transition-delay: 0.7s;
+        }
+    
+        & ol li.in-view .details p {
+            transition-delay: 0.9s;
+        }
+    }
+}
