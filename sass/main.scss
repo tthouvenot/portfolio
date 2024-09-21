@@ -139,11 +139,11 @@ footer{
     }
 
     &__social{
-        width: 18%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         font-size: 2rem;
+        gap: 3rem;
 
         & a {
                 height: 100%;
