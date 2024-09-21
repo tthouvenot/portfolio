@@ -11,12 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a1751d2ab0.js" crossorigin="anonymous"></script>
     <script src="./public/scripts/timeline.js" defer></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- TweenMax (ou GSAP) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="./public/scripts/wriggle_words.js"></script>
     <title>Tristan Thouvenot - Portfolio</title>
 </head>
 <body>
     <header class="header-container">
         <div class="header-container__home">
-            <img src="./public/img/logo.png" alt="logo"> <!-- TODO: Make a good logo -->
+            <img src="./public/img/logo.png" alt="logo">
         </div>
         <nav class="header-container__menu">
             <ul>
@@ -33,7 +38,7 @@
                     <a href="#skills">Compétences</a>
                 </li>
                 <li>
-                    <a href="#timeline">Carrière</a>
+                    <a href="#experience">Carrière</a>
                 </li>
                 <li>
                     <a href="https://google.fr">Contact</a>
@@ -60,10 +65,10 @@
                     <p>La seule chose que je sais, c'est que je ne sais rien.</p>
                 </div>
                 <div class="about__presentation">
-                    <p>Âgé de 39 ans et passionné par de nombreux domaines, j'ai découvert l'informatique il y a plus de 25 ans.</p>
-                    <p>J'ai eu la chance d'en faire ma carrière en tant qu'Administrateur systèmes et réseaux.</p>
-                    <p> Mon parcours m'a permis d'explorer de nombreux aspects de ce métier, notamment le scripting et le développement.</p>
-                    <p>Depuis, j'ai attrapé le virus du code et je passe mon temps à script, coder et développer avec enthousiasme.</p>
+                    <p>Âgé de 39 ans, ma passion pour l'informatique remonte à plus de 25 ans. J'ai eu la chance de transformer cette passion en une carrière enrichissante en tant qu'<span>Administrateur systèmes et réseaux</span>.</p>
+                    <p>À travers mes différentes fonctions, notamment celles d'Administrateur, de <span>Chef de service informatique</span> et de <span>Mentor Évaluateur</span>, j'ai eu l'opportunité de développer mes  compétences techniques tout en renforçant mes soft skills.</p>
+                    <p>Ces expériences m'ont permis d'aborder divers aspects du métier, tels que le scripting et le développement.</p>
+                    <p>Aujourd'hui, véritablement captivé par le code, je consacre la majeure partie de mon temps à coder, scripter et développer, toujours avec le même enthousiasme et la volonté de perfectionner mes compétences.</p>
                 </div>
             </div>
         </section>
@@ -113,7 +118,8 @@
                     </div>
                     <div class="goal__tasks">
                         <img src="./public/img/wip_2.jpg" alt="image work in progress">
-                        <!-- <ul>
+                        <!-- TODO : make this goal tasks when i will have informations
+                         <ul>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -135,70 +141,82 @@
         </section>
         <section id="achievement" class="achievement">
             <h2 class="achievement__section">Mes réalistations</h2>
-            <div class="achievement__dev">
-                <div class="achievement__card achievement__fisheye">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">Fisheye</h2>
-                        <p class="achievement__description">Site spécialisé dans la photographie, il permet de voir le travail des photographes et de les réserver</p>
-                        <a href="https://thumelhans.github.io/Front-End-Fisheye/" target="_blank"><button class="achievement__button" type="button">Fisheye</button></a> <!-- TODO: manage button target with JS -->
+            <div class="achievement__container">
+                <div class="achievement__dev">
+                    <div class="achievement__card achievement__fisheye">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">Fisheye</h2>
+                            <p class="achievement__description">Site spécialisé dans la photographie, il permet de voir le travail des
+                                photographes et de les réserver</p>
+                            <a href="https://thumelhans.github.io/Front-End-Fisheye/" target="_blank"><button
+                                    class="achievement__button" type="button">Fisheye</button></a>
+                            <!-- TODO: manage button target with JS -->
+                        </div>
+                    </div>
+                    <div class="achievement__card achievement__booki">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">Booki</h2>
+                            <p class="achievement__description">Site permettant de réserver un hébergement et des activités selon le
+                                lieu de vacances</p>
+                            <a
+                                href="https://thumelhans.github.io/Transformez_une_maquette_en-_site_web_avec_HTML_et_css_HUMELHANS_Tristan/"><button
+                                    class="achievement__button" type="button">Booki</button></a>
+                        </div>
+                    </div>
+                    <div class="achievement__card achievement__cook">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">Les petits plats</h2>
+                            <p class="achievement__description">Site de recette de cuisine</p>
+                            <a href="https://thumelhans.github.io/les-petits-plats/"><button class="achievement__button"
+                                    type="button">Les petits plats</button></a>
+                        </div>
+                    </div>
+                    <div class="achievement__card achievement__password">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">Générateur de mot de passe</h2>
+                            <p class="achievement__description">Site permettant de générer un mot de passe et/ou d'appliquer un
+                                chiffrement</p>
+                            <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
+                                    class="achievement__button">Générateur de mot de passe</button></a>
+                        </div>
                     </div>
                 </div>
-                <div class="achievement__card achievement__booki">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">Booki</h2>
-                        <p class="achievement__description">Site permettant de réserver un hébergement et des activités selon le lieu de vacances</p>
-                        <a href="https://thumelhans.github.io/Transformez_une_maquette_en-_site_web_avec_HTML_et_css_HUMELHANS_Tristan/"><button class="achievement__button" type="button">Booki</button></a>
+                <div class="achievement__admin">
+                    <div class="achievement__card achievement__glpi">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">GLPI</h2>
+                            <p class="achievement__description">Installation, configuration et personnalisation d'un serveur GLPI.</p>
+                            <!-- <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
+                                                class="achievement__button">Générateur de mot de passe</button></a> -->
+                        </div>
                     </div>
-                </div>
-                <div class="achievement__card achievement__cook">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">Les petits plats</h2>
-                        <p class="achievement__description">Site de recette de cuisine</p>
-                        <a href="https://thumelhans.github.io/les-petits-plats/"><button class="achievement__button" type="button">Les petits plats</button></a>
+                    <div class="achievement__card achievement__wordpress">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">WordPress</h2>
+                            <p class="achievement__description">Installation, configuration et personnalisation d'un site WordPress</p>
+                            <a href="https://ssp.molsheim.fr/" target="_blank"><button class="achievement__button">SSP de
+                                    Molsheim</button></a>
+                        </div>
                     </div>
-                </div>
-                <div class="achievement__card achievement__password">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">Générateur de mot de passe</h2>
-                        <p class="achievement__description">Site permettant de générer un mot de passe et/ou d'appliquer un chiffrement</p>
-                        <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button class="achievement__button">Générateur de mot de passe</button></a>
+                    <div class="achievement__card achievement__nagios">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">Nagios</h2>
+                            <p class="achievement__description">Installation, configuration d'un serveur Nagios</p>
+                            <!-- <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
+                                                class="achievement__button">Générateur de mot de passe</button></a> -->
+                        </div>
+                    </div>
+                    <div class="achievement__card achievement__pfsense">
+                        <div class="achievement__content">
+                            <h2 class="achievement__title">PfSense</h2>
+                            <p class="achievement__description">Installation, configuration d'un serveur PfSense</p>
+                            <!-- TODO: Manage read more with modal in JS <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
+                                                class="achievement__button">Générateur de mot de passe</button></a> -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="achievement__admin">
-                <div class="achievement__card achievement__glpi">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">GLPI</h2>
-                        <p class="achievement__description">Installation, configuration et personnalisation d'un serveur GLPI.</p>
-                        <!-- <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
-                                class="achievement__button">Générateur de mot de passe</button></a> -->
-                    </div>
-                </div>
-                <div class="achievement__card achievement__wordpress">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">WordPress</h2>
-                        <p class="achievement__description">Installation, configuration et personnalisation d'un site WordPress</p>
-                        <a href="https://ssp.molsheim.fr/" target="_blank"><button
-                                class="achievement__button">SSP de Molsheim</button></a>
-                    </div>
-                </div>
-                <div class="achievement__card achievement__nagios">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">Nagios</h2>
-                        <p class="achievement__description">Installation, configuration d'un serveur Nagios</p>
-                        <!-- <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
-                                class="achievement__button">Générateur de mot de passe</button></a> -->
-                    </div>
-                </div>
-                <div class="achievement__card achievement__pfsense">
-                    <div class="achievement__content">
-                        <h2 class="achievement__title">PfSense</h2>
-                        <p class="achievement__description">Installation, configuration d'un serveur PfSense</p>
-                        <!-- TODO: Manage read more with modal in JS <a href="https://thumelhans.github.io/gestionnairemdp/" target="_blank"><button
-                                class="achievement__button">Générateur de mot de passe</button></a> -->
-                    </div>
-                </div>
-            </div>
+            
         </section>
         <section id="skills" class="skills">
             <h2 class="skills__title">Mes Compétences</h2>
@@ -208,15 +226,15 @@
                     <!-- TODO: Make loading animation for learning skills -->
                     <div class="skills__card "><!-- TODO: erase  class -->
                         <img src="./public/img/html-5.png" alt="icone HTML5">
-                        <div class="skills__text">HTML 5</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">HTML 5</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/css-3.png" alt="icone CSS3">
-                        <div class="skills__text">CSS 3</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">CSS 3</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/sass.png" alt="icone sass">
-                        <div class="skills__text">Sass</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Sass</div>
                     </div>
                     <div class="skills__card skills__loading">
                         <div class="skills__loader-2">
@@ -232,7 +250,7 @@
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/js.png" alt="icone javascript">
-                        <div class="skills__text">Javascript</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Javascript</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2">
@@ -260,7 +278,7 @@
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/sql.png" alt="icone sql">
-                        <div class="skills__text">SQL</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">SQL</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2">
@@ -276,14 +294,14 @@
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/git.png" alt="icone git">
-                        <div class="skills__text">Git</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Git</div>
                     </div>
                 </div>
                 <div class="skills__wrap"></div>
                 <div class="skills__software">
                     <div class="skills__card ">
                         <img src="./public/img/vscode.png" alt="icone vs code">
-                        <div class="skills__text">VsCode</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">VsCode</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2">
@@ -311,55 +329,55 @@
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/linux.png" alt="icone linux">
-                        <div class="skills__text">Linux</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Linux</div> 
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/windows.jpg" alt="icone windows">
-                        <div class="skills__text">Windows</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Windows</div> 
                     </div>
                     
                     <div class="skills__card ">
                         <img src="./public/img/gpi-logo.jpg" alt="icone glpi">
-                        <div class="skills__text">GLPI</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">GLPI</div> 
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/nagios-logo.png" alt="icone nagios">
-                        <div class="skills__text">Nagios</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Nagios</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/pfsense-logo_2.jpeg" alt="icone pfsense">
-                        <div class="skills__text">PfSense</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">PfSense</div> 
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/notion.png" alt="icone notion">
-                        <div class="skills__text">Notion</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Notion</div>
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/obsidian.png" alt="icone obsidian">
-                        <div class="skills__text">Obsidian</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Obsidian</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/figma.jpg" alt="icone figma">
-                        <div class="skills__text">Figma</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Figma</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/office.png" alt="icone office">
-                        <div class="skills__text">Office</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Office</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/github.png" alt="icone github">
-                        <div class="skills__text">Github</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Github</div>
                     </div>
                 </div>
                 <div class="skills__wrap"></div>
                 <div class="skills__concept">
                     <div class="skills__card skills--management">
                         <img src="./public/img/project-management.png" alt="icone github">
-                        <div class="skills__text">Gestion de projet</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Gestion de projet</div>
                     </div>
                     <div class="skills__card skills--itil">
                         <img src="./public/img/itil.png" alt="icone github">
-                        <div class="skills__text">Itil</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Itil</div>
                     </div>
                     <div class="skills__card skills__loading">
                         <div class="skills__loader-2"></div>
@@ -407,7 +425,7 @@
                     </div>
                     <div class="skills__card skills--security">
                         <img src="./public/img/cyber-security.png" alt="icone github">
-                        <div class="skills__text">Sécurité IT</div> <!-- TODO: make visible on hover -->
+                        <div class="skills__text">Sécurité IT</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__card skills__loading "></div>
@@ -427,171 +445,179 @@
                 <h3>Transversales</h3>
                 <div class="skills__container">
                     <ul class="skills__list">
-                        <li>
+                        <li class="skills--words">
                             Curiosité
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Adaptabilité
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Travail d'équipe   
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Capacité d'apprentissage
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Empathie
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Gestion du stress
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Résolution des problèmes
                         </li>
-                    </ul>
-                    <ul class="skills__list">
-                        <li>
+                        <li class="skills--words">
                             Autonomie
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Esprit d'initiative
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Esprit critique
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Créativité
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Persévérence
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Capacité de synthèse
                         </li>
-                        <li>
+                        <li class="skills--words">
                             Pédagogie
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
-        <!-- TIMELINE  ©George Martsoukos - https://georgemartsoukos.com -->
-        <!-- Found at https://codepen.io/tutsplus/pen/zYQqPYG -->
-        <section id="timeline" class="timeline">
-            <ol>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Sept 2024 - Sept 2025</time>
+        <section id="experience" class="experience">
+            <h2 class="experience__title">Mes expériences</h2>
+            <!-- TIMELINE  ©George Martsoukos - https://georgemartsoukos.com -->
+            <!-- Found at https://codepen.io/tutsplus/pen/zYQqPYG -->
+            <div class="experience__timeline">
+                <ol>
+                    <li>
+                        <div class="experience__item-inner experience--study">
+                            <div class="experience__time-wrapper">
+                                <time>Sept 2024 - Sept 2025</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Metz Numeric School</h3>
+                                <p>Formation Concepteur Developpeur d'Application</p>
+                                <p>Titre RNCP niveau 6 - équivalent Bac +3/4-</p>
+                                <p>En cours</p>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h3>Metz Numeric School</h3>
-                            <p>Formation Concepteur Developpeur d'Application</p>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--work">
+                            <div class="experience__time-wrapper">
+                                <time>Avr 2021 - Avr 2024</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Openclassrooms</h3>
+                                <p> Mentor - Evaluateur sur le parcours Technicien Informatique</p>
+                                <p> J'ai accompagné une trentaine d'étudiant tout au long de leur parcours. Je les ai formé, leur ai prodigué des conseils et orientés vers les meilleurs ressources pour progresser.</p>
+                                <p> J'ai eu la chance également d'évaluer près de 200 étudiants sur les différents projets qu'ils ont pu faire.</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Avr 2021 - Avr 2024</time>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--work">
+                            <div class="experience__time-wrapper">
+                                <time>Jan 2019 - Dec 2021</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Commune de Molsheim</h3>
+                                <p>Chef de service informatique</p>
+                                <p>Responsable d'une quinzaine de sites, avec la gestion de 200 utilisateurs et 400 hôtes, j'ai eu l'opportunité de contribuer à de nombreux projets stratégiques.</p>
+                                <p>J'ai notamment supervisé la transformation du service en intégrant les principes ITIL, la mise en place d'un système de ticketing et de monitoring, ainsi que le recrutement d'un second informaticien. J'ai également participé au déploiement d'une fibre propriétaire pour la ville, à la migration du serveur Exchange vers Office 365, ainsi qu'à la mise en production de serveurs web et de sites sous WordPress.</p>
+                                <p>Ces expériences m'ont permis de développer des compétences variées et de renforcer ma capacité à mener des projets de grande envergure, toujours avec rigueur et enthousiasme.</p>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h3>Openclassrooms</h3>
-                            <p> Mentor - Evaluateur sur le parcours Technicien Informatique</p>
-                            <p> J'ai accompagné une trentaine d'étudiant tout au long de leur parcours. Je les ai formé, leur ai prodigué des conseils et orientés vers les meilleurs ressources</p>
-                            <p> J'ai eu la chance également d'évaluer près de 200 étudiants sur les différents projets qu'ils ont pu rendre.</p>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--work">
+                            <div class="experience__time-wrapper">
+                                <time>Oct 2018 - Dec 2018</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Altrans - Illkirch</h3>
+                                <p>Administrateur Systèmes et réseaux</p>
+                                <p>J'ai été placé en régie à la mairie de Molsheim</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Jan 2019 - Dec 2021</time>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--work">
+                            <div class="experience__time-wrapper">
+                                <time>Mar 2018 - Aout 2018</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Georgia Tech - Metz Technopôle</h3>
+                                <p>Administrateur Systèmes et réseaux</p>
+                                <p>J'ai eu l'opportunité de travailler dans un environnement anglophone dynamique, où j'ai pris en charge la gestion de plusieurs centaines d'utilisateurs, incluant étudiants, administrateurs et enseignants.</p>
+                                <p>J'ai mené à bien la migration de l'infrastructure Windows 7 vers Windows 10, en m'appuyant sur un environnement hybride WDS/Linux avec script en Bash et Batch, tout en assurant la gestion du serveur de messagerie Exchange 2016.</p>
+                                <p>Initialement recruté en tant que stagiaire, mon engagement et mes compétences m'ont valu de poursuivre avec un contrat
+                                estival, où j'ai eu l'opportunité d'assurer l'autonomie complète de l'équipe durant l'absence du responsable informatique.</p>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h3>Commune de Molsheim</h3>
-                            <p>Chef de service informatique</p>
-                            <p>Responsable d'une quinzaine sites, des 200 utilisateurs et de 400 hôtes.</p>
-                            <p>J'ai eu la chance de participer à bon nombre de projets: mutation du service (application des principes ITIL, mise en service d'un serveur de ticketing et de monitoring, recrutement d'un deuxième informaticien), déploiement de la fibre propriétaire à la ville, migration serveur Exchange vers office 365, mise en production de serveurs web et WordPress.</p>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--study">
+                            <div class="experience__time-wrapper">
+                                <time>Aout 2017 - Juin 2018</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Afpa - Remiremont</h3>
+                                <p>Formation Technicien Supérieur en Réseaux Informatiques et Télécoms</p>
+                                <p>Titre RNCP niveau 5 - équivalent Bac +2-</p>
+                                <p>Certification Cisco CCNA</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Oct 2018 - Dec 2018</time>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--work">
+                            <div class="experience__time-wrapper">
+                                <time>Aout 2014 - Jan 2016</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Database Factory - Freyming-Merlebach</h3>
+                                <p>Téléconseillé</p>
+                                <p>En charge des appels Click-to-Call pour les clients SFR. Je répondre aux attentes des clients et leur vendre les produits qui les intéressés</p>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h3>Altrans - Illkirch</h3>
-                            <p>Administrateur Systèmes et réseaux</p>
-                            <p>J'ai été placé en régie à la mairie de Molsheim</p>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--study">
+                            <div class="experience__time-wrapper">
+                                <time>2007</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Université Paul Verlaine - Metz</h3>
+                                <p>Licence Arts du spectacle - Spécialité: Cinéma</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Mar 2018 - Aout 2018</time>
+                    </li>
+                    <li>
+                        <div class="experience__item-inner experience--study">
+                            <div class="experience__time-wrapper">
+                                <time>2003</time>
+                            </div>
+                            <div class="experience__details">
+                                <h3>Lycée J.V. Poncelet - Saint-Avold</h3>
+                                <p>Baccalauréat ES</p>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h3>Georgia Tech - Metz Technopôle</h3>
-                            <p>In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis.
-                                Vestibulum id magna est.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Aout 2017 - Juin 2018</time>
-                        </div>
-                        <div class="details">
-                            <h3>Afpa - Remiremont</h3>
-                            <p>Formation Technicien Supérieur en Réseaux Informatiques et Télécoms</p>
-                            <p>-Bac +2-</p>
-                            <p>Certification Cisco CCNA</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>Aout 2014 - Jan 2016</time>
-                        </div>
-                        <div class="details">
-                            <h3>Database Factory - Freyming-Merlebach</h3>
-                            <p>Téléconseillé</p>
-                            <p>En charge des appels Click-to-Call pour les clients SFR. Je répondre aux attentes des clients et leur vendre les produits qui les intéressés</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>2007</time>
-                        </div>
-                        <div class="details">
-                            <h3>Université Paul Verlaine - Metz</h3>
-                            <p>Licence Arts du spectacle - Spécialité: Cinéma</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-inner">
-                        <div class="time-wrapper">
-                            <time>2003</time>
-                        </div>
-                        <div class="details">
-                            <h3>Lycée J.V. Poncelet - Saint-Avold</h3>
-                            <p>Baccalauréat ES</p>
-                        </div>
-                    </div>
-                </li>
-            </ol>
+                    </li>
+                </ol>
+            </div>
         </section>
+        
     </main>
     <footer>
-
+        <p>Made with love &copy Tritan Thouvenot - 2024</p>
     </footer>
 </body>
 </html>

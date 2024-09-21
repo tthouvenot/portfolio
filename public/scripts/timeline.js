@@ -1,7 +1,7 @@
 // TIMELINE  ©George Martsoukos - https://georgemartsoukos.com 
 // Found at https://codepen.io/tutsplus/pen/zYQqPYG
 
-const targets = document.querySelectorAll(".timeline ol li");
+const targets = document.querySelectorAll(".experience__timeline ol li");
 const threshold = 0.5;
 const ANIMATED_CLASS = "in-view";
 
