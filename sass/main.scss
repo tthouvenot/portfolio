@@ -313,6 +313,7 @@ footer{
         grid-area: 2 / 2 / 3 / 3;
         display: flex;
         flex-direction: column;
+        gap: 2rem;
         justify-content: space-between;
 
         & .goal__tasks{
@@ -778,7 +779,8 @@ footer{
 
     &__details{
         
-        & h3{
+        & span{
+            font-weight: 900;
         }
         
         & p:first-of-type{
