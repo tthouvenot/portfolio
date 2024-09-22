@@ -16,6 +16,7 @@
     <!-- TweenMax (ou GSAP) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
     <script src="./public/scripts/wriggle_words.js" defer></script>
+    <script src="./public/scripts/main.js" defer></script>
     <title>Tristan Thouvenot - Portfolio</title>
 </head>
 <body>
@@ -41,11 +42,12 @@
                     <a href="#experience">Carrière</a>
                 </li>
                 <li>
-                    <a href="https://google.fr">Contact</a>
+                    <a href="" class="header-container__contact">Contact</a>
                 </li>
             </ul>
         </nav>
         <div class="header-container__social">
+            <!-- Will add figma, CodePen and CodingGames-->
             <a href="https://www.instagram.com/thouvenot.tristan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/tthouvenot/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://www.threads.net/@thouvenot.tristan" target="_blank"><i class="fa-brands fa-threads"></i></a>
@@ -55,14 +57,14 @@
     <main>
         <section id="about" class="about">
             <div class="about__photo">
-                <img src="./public/img/placeholder_portrait.png" alt="placeholder_portrait">
+                <img src="./public/img/portrait.png" alt="placeholder_portrait">
             </div>
             <div class="about__content">
                 <div class="about__title">
                     <h2>Concepteur Développeur d'Application</h2>
                 </div>
-                <div class="about__tagline"><!-- TODO: make js script with multiple quote -->
-                    <p>La seule chose que je sais, c'est que je ne sais rien.</p>
+                <div class="about__tagline">
+                    <!-- Block which display quotes -->
                 </div>
                 <div class="about__presentation">
                     <p>Âgé de 39 ans, ma passion pour l'informatique remonte à plus de 25 ans. J'ai eu la chance de transformer cette passion en une carrière enrichissante en tant qu'<span>Administrateur systèmes et réseaux</span>.</p>
@@ -133,7 +135,7 @@
                         </ul> -->
                         <div class="goal__disclaimer">
                             <i class="fa-solid fa-circle-exclamation"></i>
-                            <p>Liste non exhaustive</p> <!-- TODO: manage position -->
+                            <p>Liste non exhaustive</p>
                         </div>
                     </div>
                 </div>
@@ -148,8 +150,7 @@
                             <h2 class="achievement__title">Fisheye</h2>
                             <p class="achievement__description">Site spécialisé dans la photographie, il permet de voir le travail des
                                 photographes et de les réserver</p>
-                            <a href="https://thumelhans.github.io/Front-End-Fisheye/" target="_blank"><button
-                                    class="achievement__button" type="button">Fisheye</button></a>
+                            <a href="https://thumelhans.github.io/Front-End-Fisheye/" target="_blank"><button class="achievement__button" type="button">Fisheye</button></a>
                             <!-- TODO: manage button target with JS -->
                         </div>
                     </div>
@@ -223,8 +224,7 @@
             <div class="skills__hard">
                 <h3>Techniques</h3>
                 <div class="skills__language">
-                    <!-- TODO: Make loading animation for learning skills -->
-                    <div class="skills__card "><!-- TODO: erase  class -->
+                    <div class="skills__card ">
                         <img src="./public/img/html-5.png" alt="icone HTML5">
                         <div class="skills__text">HTML 5</div>
                     </div>
@@ -247,6 +247,7 @@
                                 Bootstrap...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Bootstrap</div>
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/js.png" alt="icone javascript">
@@ -263,6 +264,7 @@
                                 C#...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">C#</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2">
@@ -275,6 +277,7 @@
                                 Java...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Java</div>
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/sql.png" alt="icone sql">
@@ -291,6 +294,7 @@
                                 Markdown...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Markdown</div>
                     </div>
                     <div class="skills__card">
                         <img src="./public/img/git.png" alt="icone git">
@@ -314,6 +318,7 @@
                                 Visual Studio...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Visual Studio</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2">
@@ -326,6 +331,7 @@
                                 Docker...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Docker</div>
                     </div>
                     <div class="skills__card ">
                         <img src="./public/img/linux.png" alt="icone linux">
@@ -388,6 +394,7 @@
                                 UX/UI...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">UX/UI design</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__loader-2"></div>
@@ -398,6 +405,7 @@
                                 Clean Code...En cours d'apprentissage
                             </p>
                         </div>
+                        <div class="skills__text">Clean Code</div>
                     </div>
                     <div class="skills__card skills__loading ">
                         <div class="skills__card skills__loading ">
@@ -409,6 +417,7 @@
                                     Design Pattern...En cours d'apprentissage
                                 </p>
                             </div>
+                            <div class="skills__text">Design Pattern</div>
                         </div>
                     </div>
                     <div class="skills__card skills__loading ">
@@ -421,6 +430,7 @@
                                     RGPD...En cours d'apprentissage
                                 </p>
                             </div>
+                            <div class="skills__text">RGPD</div>
                         </div>
                     </div>
                     <div class="skills__card skills--security">
@@ -437,9 +447,10 @@
                                 Architecture des données...En cours d'apprentissage
                             </p>
                         </div>
-                        </div>
+                        <div class="skills__text">Architecture des données</div>
                     </div>
                 </div>
+            </div>
             </div>
             <div class="skills__soft">
                 <h3>Transversales</h3>
@@ -493,6 +504,10 @@
         </section>
         <section id="experience" class="experience">
             <h2 class="experience__title">Mes expériences</h2>
+            <div class="experience__cv">
+                <a href="./public/pdf/CV.pdf" target="_blank"><button class="achievement__button" type="button">Télécharger le CV</button></a>
+            </div>
+
             <!-- TIMELINE  ©George Martsoukos - https://georgemartsoukos.com -->
             <!-- Found at https://codepen.io/tutsplus/pen/zYQqPYG -->
             <div class="experience__timeline">
@@ -613,10 +628,10 @@
                 </ol>
             </div>
         </section>
-        
     </main>
     <footer>
         <p>Made with love &copy Tritan Thouvenot - 2024</p>
     </footer>
 </body>
 </html>
+

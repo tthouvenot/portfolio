@@ -76,6 +76,7 @@ footer{
     height: 6rem;
     width:100%;
     background-color: $main-color;
+    color: $background-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -548,7 +549,7 @@ footer{
             border-radius: 50%;
         }
 
-        &:not(.skills__loading):hover{
+        &:hover{
             .skills__text{
                 position: absolute;
                 display: flex;
@@ -943,4 +944,8 @@ footer{
         }
     }
 }
+
+
+
+
 
