@@ -14,13 +14,17 @@ $title-font: 'SUSE';
 $tagline-font:'Playwrite CU'; 
 
 $section-margin: 10rem;
+$responsive-margin: 5rem;
+$smartphone-margin: 2.5rem;
 
 $section-title: $main-color solid 0.625rem;
 
 $breakpoints: (
-    "sm": 480px, 
-    "md": 768px,
-    "xl": 1200px
+    "smartphone": 480px, 
+    "tablet": 768px,
+    "laptop": 1200px,
+    "smallscreen": 1440px,
+    "special": 1600px
 );
 
 /*************
@@ -60,11 +64,16 @@ a{
 
 // General styles
 body {
+    width: 100%;
     max-width: 120rem;
     margin: auto;
     background-color: $background-color;
     font-family: $main-font, sans-serif;
     line-height: 1.5rem;
+
+    @include respond-to("laptop"){
+        line-height: normal;
+    }
 }
 
 main{
@@ -80,6 +89,10 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include respond-to("smartphone") {
+        font-size: 0.8rem;
+    }
 }
 
 /*************
@@ -105,6 +118,11 @@ footer{
             width: 7rem;
             height: 7rem;
             margin-right: 1rem;
+
+            @include respond-to("smartphone") {
+                width: 4rem;
+                height: 4rem;
+            }
         }
     }
 
@@ -123,6 +141,13 @@ footer{
             & li{
                 display: flex;
             }
+
+            @include respond-to("tablet") {
+                height: fit-content;
+                flex-direction: column;
+                font-size: 1rem;
+                gap: 1rem;
+            }
         }
 
         
@@ -135,6 +160,27 @@ footer{
             &:hover {
                 transform: scale(1.3);
                 border-bottom: $background-color .125rem solid;
+            }
+        }
+
+        @include respond-to("laptop"){
+            font-size: 0.8rem;
+        }
+
+        @include respond-to("tablet") {
+            display: none; // Masqué en mode tablette
+
+            &.active {
+                height: fit-content;
+                width: fit-content;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: $main-color;
+                right:0rem;
+                top: 8rem;
+                z-index: 10;
             }
         }
     }
@@ -156,6 +202,24 @@ footer{
                     transform: scale(1.3);
                 }
             }
+
+        @include respond-to("laptop"){
+            font-size: 1rem;
+            gap: 1rem;
+        }
+    }
+
+    &__burger{
+        display: none;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: $background-color;
+        cursor: pointer;
+    
+        @include respond-to("tablet") {
+            display: block;
+        }
     }
 
 }
@@ -180,7 +244,18 @@ footer{
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+
+            @include respond-to("laptop"){
+                width:60%
+            }
         }
+        
+        @include respond-to("laptop"){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     }
 
     &__content{
@@ -198,12 +273,23 @@ footer{
         // line-height: normal; // TODO: need to manage on small screens when multiple lines
         // white-space: nowrap;
         border-bottom: $section-title;
+        
+        @include respond-to("special"){
+            line-height: 2.5rem;
+        }
+        
+        @include respond-to("smartphone"){
+            font-size: 1.5rem;
+        }
     }
 
     &__tagline{
         font-family: $tagline-font;
         font-size: 1.2rem;
-        // TODO: manage text overflow on p
+
+        @include respond-to("smartphone"){
+            font-size: 0.9rem;
+        }
     }
 
     &__presentation{
@@ -213,6 +299,16 @@ footer{
         & span{
             font-weight: 900;
         }
+    }
+
+    @include respond-to("laptop"){
+        flex-direction: column;
+        height: auto;
+        margin-top: $responsive-margin;
+    }
+
+    @include respond-to("smartphone"){
+        margin-top: $smartphone-margin;
     }
 
 }
@@ -239,8 +335,15 @@ footer{
             font-family: $title-font;
             font-size: 3rem;
             border-bottom: $main-color solid 0.625rem;
+
+            @include respond-to("smartphone") {
+                font-size: 2rem;
+            }
         }
-                
+        
+        @include respond-to("smartphone") {
+            font-size: 1.5rem;
+        }
     }
 
     &__description{
@@ -250,6 +353,12 @@ footer{
         grid-template-rows: repeat(2);
         grid-column-gap: 3rem;
         grid-row-gap: 3rem;
+
+        @include respond-to("laptop"){
+            display: flex;
+            flex-direction: column;
+
+        }
     }
 
     &__presentation{
@@ -271,6 +380,10 @@ footer{
             width: 50%;
             height: .25rem;
             border-bottom: 2px solid $font-color;
+
+            @include respond-to("smartphone") {
+                top: 105%
+            }
         }
     }
 
@@ -281,8 +394,12 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
 
+        @include respond-to("laptop"){
+            gap: 2rem;
+        }
+    }
+    
     &__time{
         display: flex;
         justify-content: center;
@@ -297,7 +414,7 @@ footer{
             list-style-type:circle;
         }
     }
-
+    
     &__disclaimer{
         display: flex;
         justify-content: center;
@@ -319,7 +436,34 @@ footer{
 
         & .goal__tasks{
             align-self: center;
+
+            & img{
+                @include respond-to("tablet"){
+                    width: 100%;
+                }
+            }
+
+            @include respond-to("tablet"){
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
+        
+        @include respond-to("laptop"){
+            gap: 2rem;
+        }
+    }
+
+    @include respond-to("laptop"){
+        margin-top: $responsive-margin;
+        margin-bottom: $responsive-margin;
+    }
+    
+    @include respond-to("smartphone"){
+        margin-top: $smartphone-margin;
+        margin-bottom: $smartphone-margin;
     }
 
 }
@@ -341,6 +485,10 @@ footer{
         font-family: $title-font;
         font-size: 3rem;
         border-bottom: $main-color solid 0.625rem;
+
+        @include respond-to("smartphone") {
+            font-size: 1.5rem;
+        }
     }
     
     
@@ -353,6 +501,14 @@ footer{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 0.625rem;
+
+        @include respond-to("tablet"){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @include respond-to("smartphone"){
+            grid-template-columns: 1fr;
+        }
     }
     
     &__card{
@@ -402,6 +558,9 @@ footer{
     &__title{
         color:lighten($background-color, 10%);
         // background: radial-gradient(circle, rgba(8, 126, 139, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        @include respond-to("smartphone") {
+            font-size:1.3rem;
+        }
     }
 
     & p{
@@ -443,6 +602,14 @@ footer{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 0.625rem;
+        
+        @include respond-to("tablet"){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @include respond-to("smartphone") {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__glpi {
@@ -468,6 +635,16 @@ footer{
         background-size: cover;
         background-position: center center;
     }
+
+    @include respond-to("laptop"){
+        margin-top: $responsive-margin;
+        margin-bottom: $responsive-margin;
+    }
+    
+    @include respond-to("smartphone"){
+        margin-top: $smartphone-margin;
+        margin-bottom: $smartphone-margin;
+    }
 }
 
 /*************
@@ -481,6 +658,7 @@ footer{
     justify-content: flex-start;
     gap: 3rem;
     margin-top: $section-margin;
+    margin-bottom: $section-margin;
     
     &__title{
         width: fit-content;
@@ -488,6 +666,10 @@ footer{
         font-size: 3rem;
         border-bottom: $main-color solid 0.625rem;
         align-self: end;
+
+        @include respond-to("smartphone") {
+            font-size: 1.5rem;
+        }
     }
 
     /******************
@@ -560,6 +742,11 @@ footer{
                 transform: translate(-50%, -50%);
                 background-color: rgba(0, 0, 0, 0.6);;
             }
+        }
+
+        @include respond-to("smartphone"){
+            max-width: 4rem;
+            max-height: 4rem;
         }
     }
     
@@ -740,6 +927,15 @@ footer{
         transition: background-color 0.3s ease;
     }
 
+    @include respond-to("laptop"){
+        margin-top: $responsive-margin;
+        margin-bottom: $responsive-margin;
+    }
+    
+    @include respond-to("smartphone"){
+        margin-top: $smartphone-margin;
+        margin-bottom: $smartphone-margin;
+    }
 }
 
 /******************
@@ -751,11 +947,15 @@ footer{
     width: 100%;
     margin: auto;
 
-    & h2 {
+    &__title {
         width: fit-content;
         font-family: $title-font;
         font-size: 3rem;
         border-bottom: $main-color solid 0.625rem;
+
+        @include respond-to("smartphone") {
+            font-size: 1.5rem;
+        }
     }
 
     &--study{
@@ -785,9 +985,18 @@ footer{
         }
         
         & p:first-of-type{
-            margin: 1.5rem;
+            // margin: 1.5rem;
             font-style: italic;
             font-weight: bold;
+
+            @include respond-to("smartphone") {
+                font-size: 1rem;
+                margin-bottom: .9375rem;
+            }
+        }
+
+        @include respond-to("smartphone") {
+            font-size: 0.8rem;
         }
     }
 
@@ -865,6 +1074,10 @@ footer{
         & ol li time {
             display: inline-block;
             transform: translateY(-30px);
+
+            @include respond-to("smartphone") {
+                font-size: 1.5rem;
+            }
         }
         
         & ol li .experience__details>* {
@@ -875,6 +1088,10 @@ footer{
             font-size: 2rem;
             line-height: 1;
             margin: 15px 0;
+            
+            @include respond-to("smartphone") {
+                font-size: 1.25rem;
+            }
         }
         
         /***********************
